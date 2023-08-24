@@ -1,0 +1,20 @@
+<div class="calculatorContainer" id="calculator">
+  <div class="displayContainer" id="display">
+    <app-display class="display" [currentValue]="currentValue"></app-display>
+  </div>
+
+  <div class="btn-numeric">
+    <app-num-buttons class="num-btns" *ngFor="let num of number" [label]="num" (numButtonClick)="onNumHandler($event)"
+      [id]="id"></app-num-buttons>
+  </div>
+
+  <div class="btn-op">
+    <app-op-buttons *ngFor="let val of op" [label]="val" (opButtonClick)="onOpHandler($event)"
+      [id]="id"></app-op-buttons>
+  </div>
+
+  <div class="btn-fun">
+    <app-fun-buttons *ngFor="let val of function" [label]="val" (funButtonClick)="onFunHandler($event)"
+      [id]="id"></app-fun-buttons>
+  </div>
+</div>
